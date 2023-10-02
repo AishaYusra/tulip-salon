@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    /* height: 100vh; */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactinfo {
+    background-color: rgb(183, 100, 112);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    width: 100%;
+    padding: 40px 40px;
+    border-radius: 50px;
+    box-shadow: 2px 5px 28px -4px rgba(128, 128, 128, 0.75);
+    -webkit-box-shadow: 2px 5px 28px -4px rgba(128, 128, 128, 0.75);
+    -moz-box-shadow: 2px 5px 28px -4px rgba(128, 128, 128, 0.75);
+}
+
+.contactinfo h1 {
+    font-family: 'Syne', sans-serif;
+    text-align: center;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.location-icon,
+.email,
+.phone {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.location-icon p,
+.email p,
+.phone p {
+    margin-left: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.socials a {
+    margin-inline: 10px;
+}
+
+
+.socials a:hover {
+    outline: 1px solid black;
+}

@@ -1,0 +1,70 @@
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links ul {
+    list-style-type: none;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    border-bottom: 1px solid black;
+}
+
+.footer-links h2 {
+    color: rgb(183, 100, 112);
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 25px;
+}
+
+
+.footer-deets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer h1 {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: rgb(183, 100, 112);
+}
+
+footer h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+}
+
+footer h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(183, 100, 112);
+    font-size: 18px;
+}
+
+@media screen and (max-width: 576px) {
+    .footer-deets {
+        flex-direction: column;
+    }
+
+    footer h3 {
+        text-align: center;
+    }
+
+    .footer-links {
+        padding-left: 0;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+}
