@@ -8,6 +8,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 30px;
 }
 
 .contactinfo {
@@ -56,4 +57,10 @@ main {
 
 .socials a:hover {
     outline: 1px solid black;
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        padding-top: 90px;
+    }
 }

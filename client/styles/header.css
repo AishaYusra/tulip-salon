@@ -10,7 +10,11 @@ header {
     margin: none;
     height: 80px;
     background-color: white;
-    /* position: fixed; */
+}
+
+.headerr {
+    display: flex;
+    align-items: center;
 }
 
 header h1 {
@@ -28,6 +32,7 @@ header ul {
     display: flex;
     width: 500px;
     justify-content: space-between;
+    margin-left: 30px;
 }
 
 header a {
@@ -114,6 +119,8 @@ header button p {
     header {
         /* padding: 8px 16px; */
         height: 90px;
+        position: fixed;
+        width: 100%;
     }
 
     header h1,
