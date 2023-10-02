@@ -4,7 +4,7 @@ body {
 }
 
 main {
-    background-image: url(/client/images/hairbg.jpg);
+    background-image: url(/images/hairbg.jpg);
     background-size: cover;
     height: 100vh;
     color: white;
