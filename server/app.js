@@ -13,9 +13,6 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const validator = require('validator')
 
 
-// const accountsRoutes = require('./routes/accountRoutes')
-// const blogRoutes = require('./routes/blogsRoutes')
-// const userRoutes = require('./routes/userRoutes')
 
 const app = express();
 const PORT = process.env.PORT || 5000;

@@ -1,4 +1,4 @@
-const uri = 'https://hiit-blog-api.onrender.com'     // the server url
+const uri = 'https://tulipbeautysalon-api.onrender.com'     // the server url
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
