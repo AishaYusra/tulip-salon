@@ -1,4 +1,4 @@
-const uri = 'https://hiit-blog-api.onrender.com'     // the server url
+// const uri = 'https://hiit-blog-api.onrender.com'     // the server url
 
 const details = document.querySelectorAll('input')
 

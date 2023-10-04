@@ -46,16 +46,16 @@ const editProfilePopup = () => {
     firstNameInput.setAttribute('value', user.first_name)
     profileForm.appendChild(firstNameInput)
 
-    // const lastNameLabel = document.createElement('label')
-    // lastNameLabel.className = 'lastNameLabel'
-    // lastNameLabel.innerText = 'Last Name'
-    // profileForm.appendChild(lastNameLabel)
+    const lastNameLabel = document.createElement('label')
+    lastNameLabel.className = 'lastNameLabel'
+    lastNameLabel.innerText = 'Last Name'
+    profileForm.appendChild(lastNameLabel)
 
-    // const lastNameInput = document.createElement('input')
-    // lastNameInput.type = 'text'
-    // lastNameInput.className = 'lastNameInput'
-    // lastNameInput.setAttribute('value', user.last_name)
-    // profileForm.appendChild(lastNameInput)
+    const lastNameInput = document.createElement('input')
+    lastNameInput.type = 'text'
+    lastNameInput.className = 'lastNameInput'
+    lastNameInput.setAttribute('value', user.last_name)
+    profileForm.appendChild(lastNameInput)
 
 
     const emailLabel = document.createElement('label')

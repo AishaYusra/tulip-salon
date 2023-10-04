@@ -1,20 +1,21 @@
-// const token = window.localStorage.getItem('token')
-// const userName = window.localStorage.getItem('name')
+const token = window.localStorage.getItem('token')
+const userName = window.localStorage.getItem('name')
 
 
-// const user = userName ? userName : 'Anon'
+const user = userName ? userName : 'Anon'
 let dropdownState = false
 
 const header = document.querySelector('header')
 const header_btn = document.querySelector('header button')
-// const navigationMenu = document.querySelector('nav ul');
+const navigationMenu = document.querySelector('nav ul');
 
-// header_btn.innerHTML = `<p>${user}</p>`
+header_btn.innerHTML = `<p>${user}</p>`
 
 const icon = document.createElement('div')
 icon.setAttribute('class', `icon icon-${dropdownState}`)
 icon.innerHTML = `
-<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+<path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/>
 </svg>
 `
 // navigationMenu.appendChild(icon)
@@ -29,10 +30,10 @@ profile.innerText = 'Profile'
 
 const logout = document.createElement('a')
 logout.setAttribute('href', 'login.html')
-// logout.addEventListener('click', () => {
-//     window.localStorage.removeItem('token')
-//     window.localStorage.removeItem('name')
-// })
+logout.addEventListener('click', () => {
+    window.localStorage.removeItem('token')
+    window.localStorage.removeItem('name')
+})
 logout.innerText = 'Logout'
 
 const login = document.createElement('a')
@@ -43,15 +44,17 @@ const signup = document.createElement('a')
 signup.setAttribute('href', 'signup.html')
 signup.innerText = 'Sign Up'
 
-// if (token) {
-//     dropdown.appendChild(profile)
-//     dropdown.appendChild(logout)
-// }
+if (token) {
+    dropdown.appendChild(profile)
+    dropdown.appendChild(logout)
+}
 
-// else {
-dropdown.appendChild(login)
-dropdown.appendChild(signup)
-// }
+else {
+    dropdown.appendChild(login)
+    dropdown.appendChild(signup)
+    // navigationMenu.appendChild(icon)
+
+}
 
 header.appendChild(dropdown)
 
