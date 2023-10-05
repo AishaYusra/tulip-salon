@@ -27,3 +27,25 @@ btn.addEventListener('click', (e) => {
     }
 
 })
+
+async function createAccount(data) {
+    try {
+        const response = await fetch(`${uri}/accounts/auth/signup`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        if (result.error) msg.innerText = result.error
+
+        if (response.status === 200) window.location.href = 'login.html'
+
+        console.log(result);
+    } catch (error) {
+        msg.innerText = error.error
+        console.error(error);
+    }
+}
