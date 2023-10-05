@@ -4,6 +4,6 @@ const accounts = require('../controllers/accountcontroller')
 
 
 router.post('/auth/signup', accounts.signup)
-router.post('/auth/login', accounts.login)
+router.post('/login', accounts.login)
 
 module.exports = router

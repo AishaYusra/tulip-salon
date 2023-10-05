@@ -9,18 +9,19 @@ btn.addEventListener('click', (e) => {
     e.preventDefault()
     msg.innerText = ''
 
-    if (!details[0].value || !details[1].value || !details[2].value || !details[3].value || !details[4].value) {
+    if (!details[0].value || !details[1].value || !details[2].value || !details[3].value) {
         msg.innerText = 'All fields must be filled'
     }
-    else if (details[3].value !== details[4].value) {
+    else if (details[2].value !== details[3].value) {
         msg.innerText = "Passwords do not match"
     }
     else {
         let user = {
-            firstname: details[0].value,
-            lastname: details[1].value,
-            email: details[2].value,
-            password: details[3].value
+            name: details[0].value,
+            email: details[1].value,
+            password: details[2].value
+            // password: details[2].value
+
         }
 
         createAccount(user)
@@ -43,7 +44,7 @@ async function createAccount(data) {
 
         if (response.status === 200) window.location.href = 'login.html'
 
-        console.log(result);
+        console.log(result)
     } catch (error) {
         msg.innerText = error.error
         console.error(error);

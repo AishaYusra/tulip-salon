@@ -12,7 +12,7 @@ exports.signup = async (req, res) => {
     const { name, email, password } = req.body
 
     try {
-        const user = await Accounts.signUp(name, email, password)
+        const user = await Accounts.signup(name, email, password)
         res.status(200).json({ message: "Account Created Successfully!" })
 
     } catch (error) {

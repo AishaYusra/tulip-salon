@@ -6,7 +6,7 @@ const uuid = require('uuid')
 
 class Accounts {
 
-    static async signUp(name, email, password) {
+    static async signup(name, email, password) {
 
         const id = uuid.v4()
         // const created_at = await timestamp()
