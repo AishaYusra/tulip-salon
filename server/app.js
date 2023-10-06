@@ -59,35 +59,40 @@ app.post("/signup", async (req, res) => {
 });
 
 
-// app.post('/login', async (req, res) => {
-//     const { email, password } = req.body;
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+    console.log('Login request received')
 
-//     try {
-//         if (!email) throw Error('Please insert your email');
-//         if (!password) throw Error('Please insert your password');
+    try {
+        if (!email) throw Error('Please insert your email');
+        if (!password) throw Error('Please insert your password');
 
-//         // Check if the email and password match the user in the database
-//         const user = await db.execute('SELECT * FROM signup WHERE email = ?', [email]);
+        // Check if the email and password match the user in the database
+        const user = await db.execute('SELECT * FROM signup WHERE email = ?', [email]);
 
-//         if (user[0].length === 0) {
-//             throw Error('Invalid email or password');
-//         }
+        if (user[0].length === 0) {
+            throw Error('Invalid email or password');
+        }
 
-//         const { id, name, password: storedPassword } = user[0][0];
+        const { id, name, password: storedPassword } = user[0][0];
 
-//         const isMatch = await bcrypt.compare(password, storedPassword);
-//         if (!isMatch) {
-//             throw Error('Invalid email or password!');
-//         }
+        const isMatch = await bcrypt.compare(password, storedPassword);
+        if (!isMatch) {
+            throw Error('Invalid email or password!');
+        }
 
-//         // Generate JWT token
-//         const token = jwt.sign({ id, email }, JWT_SECRET, { expiresIn: '1hr' });
+        // Generate JWT token
+        const token = jwt.sign({ id, email }, JWT_SECRET, { expiresIn: '1hr' });
 
-//         res.status(200).json({ id, name, token, message: 'Login successful!' });
-//     } catch (error) {
-//         res.status(400).json({ error: error.message });
-//     }
-// });
+        res.status(200).json({ id, name, token, message: 'Login successful!' });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`Listening on PORT ${PORT}`)
+});
 
 
 // app.patch('/changeinfo ', async (req, res) => {
@@ -139,6 +144,3 @@ app.post("/signup", async (req, res) => {
 //     }
 // });
 
-app.listen(PORT, () => {
-    console.log(`Listening on PORT ${PORT}`)
-});
