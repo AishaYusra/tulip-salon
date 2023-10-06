@@ -12,6 +12,17 @@ const db = require("./config/db");
 const JWT_SECRET = process.env.JWT_SECRET;
 const validator = require('validator')
 
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use(cors({
+    origin: ["http://127.0.0.1:5500"],
+    credentials: true
+}));
+
+
 app.post("/signup", async (req, res) => {
     const { name, email, password } = req.body;
     console.log("Signup request received");
@@ -128,6 +139,6 @@ app.post("/signup", async (req, res) => {
 //     }
 // });
 
-// app.listen(PORT, () => {
-//     console.log(`Listening on PORT ${PORT}`)
-// });
+app.listen(PORT, () => {
+    console.log(`Listening on PORT ${PORT}`)
+});
