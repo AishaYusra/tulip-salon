@@ -20,8 +20,6 @@ btn.addEventListener('click', (e) => {
             name: details[0].value,
             email: details[1].value,
             password: details[2].value
-            // password: details[2].value
-
         }
 
         createAccount(user)
@@ -32,6 +30,7 @@ btn.addEventListener('click', (e) => {
 async function createAccount(data) {
     try {
         const response = await fetch(`${uri}/accounts/auth/signup`, {
+            mode: "no-cors",
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

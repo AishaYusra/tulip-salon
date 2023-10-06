@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const message = document.querySelector('.message');
     const dateSelect = document.getElementById('dateSelect'); // Select the date dropdown
     const timeSelect = document.getElementById('timeSelect'); // Select the time dropdown
-
-
+    const btn = document.querySelector('form button')
     // Function to populate the date dropdown with options
     function populateDateOptions() {
         const startDate = new Date(); // You can set the starting date as needed
@@ -99,11 +98,16 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             message.textContent = 'Appointment booked successfully!';
             form.reset(); // Reset the form
+            window.location.href = 'index.html'
         }
 
     });
 
+    btn.addEventListener('click', async (e) => {
+        e.preventDefault()
 
+    })
 
 });
+
 
