@@ -61,7 +61,7 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
     const { email, password } = req.body;
-    console.log('Login request received')
+    // console.log('Login request received')
 
     try {
         if (!email) throw Error('Please insert your email');

@@ -53,6 +53,11 @@ footer h3 {
 }
 
 @media screen and (max-width: 576px) {
+
+    footer {
+        width: 100%;
+    }
+
     .footer-deets {
         flex-direction: column;
     }

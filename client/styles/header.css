@@ -58,9 +58,12 @@ header button {
 }
 
 header button p {
+    font-family: 'Maven Pro', sans-serif;
     font-size: 20px;
-    font-weight: 600;
-    margin-right: 12px;
+    font-weight: 700;
+    margin-right: 6px;
+    color: rgb(183, 100, 112);
+
 }
 
 .icon {
@@ -114,10 +117,10 @@ header button p {
     margin: 0;
 }
 
+
 @media screen and (max-width: 576px) {
 
     header {
-        /* padding: 8px 16px; */
         height: 90px;
         position: fixed;
         width: 100%;
@@ -135,6 +138,7 @@ header button p {
     .headerr {
         display: flex;
         flex-direction: column;
+        margin: -20px;
     }
 
 
