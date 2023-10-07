@@ -1,3 +1,5 @@
+const uri = 'https://tulipbeautysalon-api.onrender.com'     // the server url
+
 const details = document.querySelectorAll('input')
 const form = document.querySelector("form");
 const message = document.querySelector('.message');

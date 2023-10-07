@@ -1,3 +1,4 @@
+const uri = 'https://tulipbeautysalon-api.onrender.com'     // the server url
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -13,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const header = document.querySelector('header')
     const header_btn = document.querySelector('header button')
-    // const navigationMenu = document.querySelector('nav ul');
-
     header_btn.innerHTML = `<p>${user}</p>`
 
 
