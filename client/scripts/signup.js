@@ -28,8 +28,6 @@ form.addEventListener("submit", (e) => {
         createAccount(user)
     }
 
-
-
     async function createAccount(data) {
         try {
             const response = await fetch("http://localhost:4000/signup", {
@@ -52,8 +50,6 @@ form.addEventListener("submit", (e) => {
         } catch (error) {
             message.textContent = error.message
         }
-
-
 
         form.reset()
     };
