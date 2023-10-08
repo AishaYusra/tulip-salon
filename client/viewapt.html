@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulip Beauty Salon</title>
+    <title>TBS | View Appointments</title>
     <link rel="icon" type="image/png" href="/icons/hair.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/viewapt.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -19,34 +23,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/footer.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="headerr">
-            <h1>Tulip Beauty Salon</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Our Services</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <!-- <li><a href="login.html">Contact Us</a></li>
-                    <li><a href="signup.html">Contact Us</a></li> -->
-                </ul>
-            </nav>
-        </div>
+        <h1>Tulip Beauty Salon</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
         <button></button>
     </header>
 
+
+
     <main>
-        <h3>Where Tranquility Meets Transformation</h3>
-        <p>We show your skin and hair <br> the care and attention <br> they deserve.</p>
-        <button id="bookbutton"><a href="book.html">Book Now</a></button>
+        <div class="mainhead">
+            <h1>Previous Appointments</h1>
+            <button><a href="book.html">Book Another Appointment</a></button>
+        </div>
+
+        <div class="appointment-list">
+
+        </div>
+
     </main>
 
     <footer>
@@ -75,8 +79,10 @@
             </h3>
         </div>
     </footer>
-
     <script src="./scripts/header.js"></script>
+    <script src="/client/scripts/viewapt.js"></script>
+
 </body>
+
 
 </html>

@@ -11,3 +11,11 @@ if (token) {    // ensures only authenticated users can add a new blog
     bookapt.innerText = 'Book Now'
     main.appendChild(bookapt)
 }
+
+if (token) {
+    const viewapt = document.createElement('a')
+    viewapt.className = 'viewapt'
+    viewapt.href = 'viewapt.html'
+    viewapt.innerText = 'View Appointments'
+    main.appendChild(viewapt)
+} 

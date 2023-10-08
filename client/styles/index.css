@@ -33,16 +33,20 @@ main a {
     color: white;
 }
 
-.bookapt {
+.bookapt,
+.viewapt {
     font-family: 'Lato', sans-serif;
     padding: 16px 16px;
-    /* width: 150px; */
     border: none;
     background-color: rgb(183, 100, 112);
-    /* color: white; */
 }
 
-.bookapt:hover {
+.viewapt {
+    margin-top: 10px;
+}
+
+.bookapt:hover,
+.viewapt:hover {
     transform: scale(1.09);
 }
 

@@ -1,118 +1,99 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-const main = document.querySelector('main')
+    const uri = 'https://tulipbeautysalon-api.onrender.com'
+    const userName = window.localStorage.getItem('name');
 
-const profile = document.createElement('div')
-profile.className = 'profile'
-main.appendChild(profile)
+    const main = document.querySelector('main')
 
-const welcomeMsg = document.createElement('h2')
-welcomeMsg.className = 'welcome'
-welcomeMsg.innerText = `Hi, ${user.first_name}`
-profile.appendChild(welcomeMsg)
+    const profile = document.createElement('div')
+    profile.className = 'profile'
+    main.appendChild(profile)
 
-const userEmail = document.createElement('p')
-userEmail.className = 'userEmail'
-userEmail.innerText = user.email
-profile.appendChild(userEmail)
+    const welcomeMsg = document.createElement('h2')
+    welcomeMsg.className = 'Welcome'
+    welcomeMsg.innerText = `Hi, ${userName}`
+    profile.appendChild(welcomeMsg)
 
-const editProfileBtn = document.createElement('button')
-editProfileBtn.className = 'edit-profile'
-editProfileBtn.innerText = 'Edit Profile'
-profile.appendChild(editProfileBtn)
+    const textEdit = document.createElement('p')
+    textEdit.className = 'text'
+    textEdit.innerText = `You can edit your name and email by clicking the button below.`
+    profile.appendChild(textEdit)
 
-
-editProfileBtn.addEventListener('click', () => {
-    editProfilePopup()
-})
-
-const editProfilePopup = () => {
-    // pop-up to edit profile
-    const cover = document.createElement('div')
-    cover.className = 'cover'
-    main.appendChild(cover)
-
-    const profileForm = document.createElement('form')
-    profileForm.className = 'profileForm'
-    cover.appendChild(profileForm)
-
-    const NameLabel = document.createElement('label')
-    NameLabel.className = 'NameLabel'
-    NameLabel.innerText = 'Your Name'
-    profileForm.appendChild(NameLabel)
-
-    const firstNameInput = document.createElement('input')
-    firstNameInput.type = 'text'
-    firstNameInput.className = 'firstNameInput'
-    firstNameInput.setAttribute('value', user.first_name)
-    profileForm.appendChild(firstNameInput)
-
-    const lastNameLabel = document.createElement('label')
-    lastNameLabel.className = 'lastNameLabel'
-    lastNameLabel.innerText = 'Last Name'
-    profileForm.appendChild(lastNameLabel)
-
-    const lastNameInput = document.createElement('input')
-    lastNameInput.type = 'text'
-    lastNameInput.className = 'lastNameInput'
-    lastNameInput.setAttribute('value', user.last_name)
-    profileForm.appendChild(lastNameInput)
+    const editProfileBtn = document.createElement('button')
+    editProfileBtn.className = 'edit-profile'
+    editProfileBtn.innerText = 'Edit Profile'
+    profile.appendChild(editProfileBtn)
 
 
-    const emailLabel = document.createElement('label')
-    emailLabel.className = 'emailLabel'
-    emailLabel.innerText = 'Email'
-    profileForm.appendChild(emailLabel)
+    editProfileBtn.addEventListener('click', () => {
+        editProfilePopup()
+    })
 
-    const emailInput = document.createElement('input')
-    emailInput.type = 'email'
-    emailInput.className = 'emailInput'
-    emailInput.setAttribute('value', user.email)
-    profileForm.appendChild(emailInput)
+    const editProfilePopup = () => {
+        // pop-up to edit profile
+        const cover = document.createElement('div')
+        cover.className = 'popup'
+        main.appendChild(cover)
 
-    const passwordLabel = document.createElement('label')
-    passwordLabel.className = 'passwordLabel'
-    passwordLabel.innerText = 'Password'
-    profileForm.appendChild(passwordLabel)
+        const profileForm = document.createElement('form')
+        profileForm.className = 'profileForm'
+        cover.appendChild(profileForm)
 
-    const passwordInput = document.createElement('input')
-    passwordInput.type = 'password'
-    passwordInput.className = 'passwordInput'
-    profileForm.appendChild(passwordInput)
+        const NameLabel = document.createElement('label')
+        NameLabel.className = 'NameLabel'
+        NameLabel.innerText = 'Your Name'
+        profileForm.appendChild(NameLabel)
 
-    const cpasswordLabel = document.createElement('label')
-    cpasswordLabel.className = 'cpasswordLabel'
-    cpasswordLabel.innerText = 'Confirm Password'
-    profileForm.appendChild(cpasswordLabel)
+        const firstNameInput = document.createElement('input')
+        firstNameInput.type = 'text'
+        firstNameInput.className = 'nameInput'
+        profileForm.appendChild(firstNameInput)
 
-    const cpasswordInput = document.createElement('input')
-    cpasswordInput.type = 'password'
-    cpasswordInput.className = 'cpasswordInput'
-    profileForm.appendChild(cpasswordInput)
+        const emailLabel = document.createElement('label')
+        emailLabel.className = 'NameLabel'
+        emailLabel.innerText = 'Your Email'
+        profileForm.appendChild(emailLabel)
 
-    const btnContainer = document.createElement('div')
-    btnContainer.className = 'btnContainer'
-    profileForm.appendChild(btnContainer)
+        const emailInput = document.createElement('input')
+        emailInput.type = 'email'
+        emailInput.className = 'emailInput'
+        profileForm.appendChild(emailInput)
 
-    const discardBtn = document.createElement('button')
-    discardBtn.className = 'discardBtn'
-    discardBtn.innerHTML = `
+        const passwordLabel = document.createElement('label')
+        passwordLabel.className = 'passwordLabel'
+        passwordLabel.innerText = 'Password'
+        profileForm.appendChild(passwordLabel)
+
+        const passwordInput = document.createElement('input')
+        passwordInput.type = 'password'
+        passwordInput.className = 'passwordInput'
+        profileForm.appendChild(passwordInput)
+
+        const btnContainer = document.createElement('div')
+        btnContainer.className = 'btnContainer'
+        profileForm.appendChild(btnContainer)
+
+        const discardBtn = document.createElement('button')
+        discardBtn.className = 'discardBtn'
+        discardBtn.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             `
-    discardBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        cover.classList.add('hide')
-    })
-    btnContainer.appendChild(discardBtn)
+        discardBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            cover.classList.add('hide')
+        })
+        btnContainer.appendChild(discardBtn)
 
-    const confirmBtn = document.createElement('button')
-    confirmBtn.className = 'confirmBtn'
-    confirmBtn.innerHTML = `
+        const confirmBtn = document.createElement('button')
+        confirmBtn.className = 'confirmBtn'
+        confirmBtn.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
     <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>`
-    confirmBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        cover.classList.add('hide')
-    })
-    btnContainer.appendChild(confirmBtn)
-}
+        confirmBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            cover.classList.add('hide')
+        })
+        btnContainer.appendChild(confirmBtn)
+    }
+});
