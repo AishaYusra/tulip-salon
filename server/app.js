@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 const db = require("./config/db");
 const JWT_SECRET = process.env.JWT_SECRET;
 const validator = require('validator')
-const mysql = require("mysql2/promise")
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
