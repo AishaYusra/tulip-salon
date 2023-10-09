@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');
 const db = require("./config/db");
 const JWT_SECRET = process.env.JWT_SECRET;
 const validator = require('validator')
+const mysql = require("mysql2/promise")
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,6 +22,8 @@ app.use(cors({
     origin: ["http://127.0.0.1:5500"],
     credentials: true
 }));
+
+
 
 // const getTimestamp = async () => {
 //     const timestamp = Date.now();
