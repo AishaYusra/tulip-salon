@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ["http://127.0.0.1:5500"],
+    origin: ["https://tulipbeautysalon.onrender.com"],
     credentials: true
 }));
 
