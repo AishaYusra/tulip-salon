@@ -19,28 +19,9 @@ const PORT = process.env.PORT || 5000;
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ["https://tulipbeautysalon.onrender.com"],
+    origin: ["http://127.0.0.1:5500", "https://tulipbeautysalon.onrender.com"],
     credentials: true
 }));
-
-
-
-// const getTimestamp = async () => {
-//     const timestamp = Date.now();
-//     const date = new Date(timestamp);
-
-//     const year = date.getFullYear();
-//     const month = ('0' + (date.getMonth() + 1)).slice(-2);
-//     const day = ('0' + date.getDate()).slice(-2);
-//     const hours = ('0' + date.getHours()).slice(-2);
-//     const minutes = ('0' + date.getMinutes()).slice(-2);
-//     const seconds = ('0' + date.getSeconds()).slice(-2);
-
-//     const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
-
-//     return (formattedDate);
-// }
-
 
 app.post("/signup", async (req, res) => {
     const { name, email, password } = req.body;
@@ -65,7 +46,7 @@ app.post("/signup", async (req, res) => {
         const id = uuid.v4();
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(password, salt);
-        let sql = `INSERT INTO signup ( name, email, password)
+        let sql = `INSERT INTO signup (name, email, password)
                      VALUES ('${name}', '${email}', '${hash}')`;
 
         await db.execute(sql, [name, email, hash]);
